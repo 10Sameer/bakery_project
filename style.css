@@ -972,9 +972,9 @@ textarea {
 
    .image,
    form {
-       width: 100%;
-       max-width: none;
-       margin-right: 0; 
+      width: 100%;
+      max-width: none;
+      margin-right: 0; 
    }
 
    .inputBox {
