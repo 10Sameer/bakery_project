@@ -14,16 +14,10 @@ $loggedin = false;
         $userName = $_POST['userName'];
         $userAddress = $_POST['userAddress'];
         $userPhone = $_POST['userPhone'];
-        $userEmail = $_POST['userEmail'];
-        $product = $_POST['product'];
-        $quantity = $_POST['quantity'];
 
         $_SESSION['userName'] = $userName;
         $_SESSION['userAddress'] = $userAddress;
         $_SESSION['userPhone'] = $userPhone;
-        $_SESSION['userEmail'] = $userEmail;
-        $_SESSION['product'] = $product;
-        $_SESSION['quantity'] = $quantity;
     }
 ?>
 <!DOCTYPE html>

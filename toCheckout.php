@@ -1,3 +1,17 @@
+<?php 
+session_start();
+include '_dbconnect.php';
+$loggedin = true;
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("location:signinpage.php");
+}
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $quantity = $_POST['quantity'];
+    $_SESSION['quantity'] = $quantity;
+    $product = $_POST['productName'];
+    $_SESSION['productName'] = $product;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,39 +105,23 @@
                 <label for="userPhone">Phone Number:</label>
                 <input type="text" id="userPhone" name="userPhone" required>
             </div>
-
-            <div class="form-group">
-                <label for="userEmail">Email:</label>
-                <input type="email" id="userEmail" name="userEmail" required>
-            </div>
-
+            
             <div class="form-group">
                 <label for="product">Product:</label>
-                <select id="product" name="product" required>
-                    <option value="Pastries Cake">Pastries Cake</option>
-                    <option value="Cup Cake">Cup Cake</option>
-                    <option value="Donuts">Donuts</option>
-                    <option value="Cake">Cake</option>
-                    <option value="Chocolate Cake">Chocolate Cake</option>
-                    <option value="Breads and cookies">Breads and cookies</option>
-                </select>
+                <?php 
+                echo'
+                <input type="text" id="userEmail" name="userEmail" value="'.$_SESSION['productName'].'" disabled>';
+                ?>
+                
             </div>
-
+            
             <div class="form-group">
                 <label for="quantity">Quantity</label>
-                <select id="quantity" name="quantity" required>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
-            </div>
+                <?php 
+                echo'
+                <input type="text" id="userEmail" name="userEmail" value="'.$_SESSION['quantity'].'" disabled>';
+                ?>
+
 
             <!-- <div class="form-group">
 

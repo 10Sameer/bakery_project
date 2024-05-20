@@ -44,7 +44,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         
         echo'<script>
         alert("Sign In Successfull");
-        window.location.href="addTocart-1.php";
+        window.location.href="signinpage.php";
         </script>';
     }
 
